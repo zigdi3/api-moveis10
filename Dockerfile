@@ -25,4 +25,4 @@ ENV STRING_CONEXAO_DB=${DATABASE_URL}
 EXPOSE 8088
 
 ##HEALTHCHECK CMD curl --fail http://localhost:$PORT || exit 1 
-CMD ["npm", "start", "--port", 8088]
+CMD ["npm", "start", "--port", "8088"]
