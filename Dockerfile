@@ -5,7 +5,7 @@ FROM node:18.12.1-alpine
 RUN apk add --no-cache nodejs npm
 
 # Set working directory
-WORKDIR /src
+WORKDIR /app
 
 # Copy package.json and package-lock.json
 COPY package*.json ./ ./
