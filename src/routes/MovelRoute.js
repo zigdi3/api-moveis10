@@ -1,5 +1,5 @@
 import express from 'express';
-import MovelController from '../controllers/movelController.js';
+import MovelController from '../controllers/movel.controller.js';
 
 const router = express.Router()
 router
