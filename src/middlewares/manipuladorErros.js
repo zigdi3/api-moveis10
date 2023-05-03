@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import ErroBase from "../erros/erroBase.js";
-import ErroValidacao from "../erros/erroValidacao.js";
+import ErroValidacao from "../erros/validationError.js";
 import RequisicaoIncorreta from "../erros/requisicaoIncorreta.js";
 
 function manipuladorErros(erro, req, res, next) {
