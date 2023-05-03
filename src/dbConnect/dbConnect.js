@@ -1,5 +1,7 @@
 import mongoose from "mongoose";
 
+mongoose.set('strictQuery', true);
+mongoose.set('debug', true);
 mongoose.connect("mongodb+srv://api:YJrfrgLQoyermtNf@api.nxkdqib.mongodb.net/mydatabase", {
   ssl: true,
   sslValidate: false
