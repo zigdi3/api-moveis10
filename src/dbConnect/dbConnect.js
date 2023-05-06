@@ -1,8 +1,9 @@
 import mongoose from "mongoose";
 
+const connectionString = "${{ secrets.DATABASE_URL }}";
 mongoose.set('strictQuery', true);
 mongoose.set('debug', true);
-mongoose.connect("mongodb+srv://api:YJrfrgLQoyermtNf@api.nxkdqib.mongodb.net/mydatabase", {
+mongoose.connect(connectionString, {
   ssl: true,
   sslValidate: false
 });
