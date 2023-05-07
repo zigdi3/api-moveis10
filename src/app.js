@@ -5,7 +5,7 @@ import manipulador404 from "./middlewares/manipulador404.js";
 import manipuladorErros from "./middlewares/manipuladorErros.js";
 import cors from 'cors';
 import swaggerUi from 'swagger-ui-express';
-import swaggerFile from '../swagger_output.json' assert { type: "json" };
+import swaggerFile from './domain/swagger.json' assert { type: "json" };
 
 db.on('error', () => {
     console.log('conexão com o banco deu erro')

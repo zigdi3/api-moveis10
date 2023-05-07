@@ -1,8 +1,9 @@
 import Movel from "../models/movelModel.js";
 
 class MovelController {
+
     static listarMovel = async (req, res, next) => {
-        // #swagger.tag = ['User']
+        // #swagger.tag = ['Moveis']
         // #swagger.description = 'Lista os moveis do sistema'
 
         try {
@@ -14,7 +15,7 @@ class MovelController {
     }
 
     static ListarMovelPorId = async (req, res, next) => {
-        // #swagger.tag = ['User']
+        // #swagger.tag = ['Moveis']
         // #swagger.description = 'Lista os moveis do sistema por id'
 
         try {
@@ -31,11 +32,11 @@ class MovelController {
         }
     }
     static CadastrarMovel = async (req, res, next) => {
-        // #swagger.tag = ['User']
+        // #swagger.tag = ['Moveis']
         // #swagger.description = 'Cadastra novo movel no sistema'
 
         /*
-              #swagger.parameters['obj'] = {
+              #swagger.parameters[''] = {
           in: 'body',
           description: 'Dados do movel',
           required: true,
@@ -54,7 +55,27 @@ class MovelController {
     }
 
     static AtualizarMovel = async (req, res, next) => {
+        /*
+            #swagger.tag = ['Moveis']
+            #swagger.description = 'Atualiza movel no sistema'
+
+           
+       */
         try {
+            /*
+                #swagger.parameter['id] = {
+                in: 'path',
+                description: 'Id do movel',
+                required: true,
+                },
+                
+                #swagger.parameters[''] = {
+                in: 'body',
+                description: 'Dados do movel',
+                required: true,
+                schema: { $ref: "#/definitions/CadastrarMovel" }
+                }
+            */
             const id = req.params.id
             const movelResultado = await Movel.findByIdAndUpdate(id, { $set: req.body });
             if (movelResultado !== null) {
@@ -67,6 +88,17 @@ class MovelController {
         }
     }
     static ExcluirMovel = async (req, res, next) => {
+        /*  
+            #swagger.tag = ['Moveis']
+            #swagger.description = 'Exclui movel no sistema'
+            
+            #swagger.parameter['id] = {
+            in: 'path',
+            description: 'Id do movel',
+            required: true,
+            },
+        */
+
         try {
             const id = req.params.id
             const movelResultado = await Movel.findByIdAndDelete(id)
