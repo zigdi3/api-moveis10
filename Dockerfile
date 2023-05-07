@@ -18,11 +18,12 @@ COPY . .
 
 # Build Arguments
 ARG DATABASE_URL 
-
+ARG PORT=3000
 # Set environment variables
-ENV STRING_CONEXAO_DB=$DATABASE_URL
+ENV DB_URI=${DATABASE_URL}
+ENV PORT=${PORT}
 
-EXPOSE 3000
+EXPOSE ${PORT} 
 
 ##HEALTHCHECK CMD curl --fail http://localhost:$PORT || exit 1 
-CMD ["npm", "start"]
+CMD ["npm", "start", "--port", "$PORT"]
