@@ -11,7 +11,8 @@ WORKDIR /
 COPY package*.json ./ ./
 
 # Install dependencies
-RUN npm install
+RUN npm install -g npm@latest
+RUN npm install --legacy-peer-deps
 
 # Copy source code
 COPY . .
