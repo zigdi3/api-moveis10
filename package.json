@@ -119,7 +119,9 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node --experimental-modules --require ./env.cjs server.js"
+    "start": "node --experimental-modules --require ./env.cjs server.js",
+    "docker": "node --experimental-modules server.js"
+
   },
   "author": "",
   "license": "ISC"
