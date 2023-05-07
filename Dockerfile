@@ -25,5 +25,5 @@ ENV PORT=${PORT}
 
 EXPOSE ${PORT} 
 
-##HEALTHCHECK CMD curl --fail http://localhost:$PORT || exit 1 
-CMD ["npm", "docker", "--port", "$PORT"]
+HEALTHCHECK CMD curl --fail http://localhost:$PORT || exit 1 
+CMD ["npm", "run", "start", "--port", "$PORT"]
