@@ -1,4 +1,4 @@
-import Movel from "../models/movelModel.js";
+import Movel from "../../domain/models/movelModel.js";
 
 class MovelController {
     static listarMovel = async (req, res, next) => {

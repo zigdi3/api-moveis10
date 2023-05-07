@@ -1,0 +1,29 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Calculadora",
+    "description": "API Calculadora com swagger",
+    "version": "1.0"
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/moveis": {
+      "get": {
+        "description": "Retorna moveis do sistema",
+        "operationId": "listarMovel",
+        "paramenter": [
+          {
+          "name": "id",
+          "in": "path",
+          "description": "Id do movel no sistema."
+        }
+      ],
+        "responses": {}
+      }
+    }
+  }   
+}

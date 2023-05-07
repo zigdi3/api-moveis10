@@ -1,8 +1,8 @@
-import db from "./dbConnect/dbConnect.js";
+import db from "./api/main/config/dbConnect.js";
 import express from 'express';
-import routes from "./routes/index.js";
-import manipulador404 from "./middlewares/manipulador404.js";
-import manipuladorErros from "./middlewares/manipuladorErros.js";
+import routes from "./api/main/routes/index.js";
+import manipulador404 from "./api/presentation/middlewares/manipulador404.js";
+import manipuladorErros from "./api/presentation/middlewares/manipuladorErros.js";
 import cors from 'cors';
 
 

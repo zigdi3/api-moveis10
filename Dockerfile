@@ -1,6 +1,8 @@
 # Set base image to alpine
 FROM node:18.12.1-alpine
 
+# Build Arguments
+ARG DATABASE_URL 
 # Install Node.js and NPM
 RUN apk add --no-cache nodejs npm
 
@@ -16,11 +18,9 @@ RUN npm install
 # Copy source code
 COPY . .
 
-# Build Arguments
-ARG DATABASE_URL 
 
 # Set environment variables
-ENV STRING_CONEXAO_DB=${DATABASE_URL}
+ENV STRING_CONEXAO_DB=$DATABASE_URL
 
 EXPOSE 3000
 
