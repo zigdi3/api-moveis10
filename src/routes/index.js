@@ -1,6 +1,6 @@
 import express from 'express'
 import Movel from './movel.route.js'
-import envRouter from './env.other.js';
+import envRouter from './maintance.default.js';
 
 const routes = (app) => {
   app.route("/").get((req, res) => {
