@@ -4,7 +4,8 @@ import routes from "./routes/index.js";
 import manipulador404 from "./middlewares/manipulador404.js";
 import manipuladorErros from "./middlewares/manipuladorErros.js";
 import cors from 'cors';
-
+import swaggerUi from 'swagger-ui-express';
+import swaggerFile from '../swagger_output.json' assert { type: "json" };
 
 db.on('error', () => {
     console.log('conexão com o banco deu erro')
@@ -25,11 +26,15 @@ app.use((req, res, next) => {
     next();
 });
 
+/* Middlewares */
+//app.use(routes)
+app.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerFile))
 
 routes(app)
 
 app.use(manipulador404)
 
 app.use(manipuladorErros)
+
 
 export default app

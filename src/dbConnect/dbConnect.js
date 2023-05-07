@@ -1,6 +1,8 @@
 import mongoose from "mongoose";
+import * as dotenv from 'dotenv'
 
-const connectionString = "${{ secrets.DATABASE_URL }}";
+dotenv.config()
+const connectionString = `${process.env.STRING_CONEXAO_DB}`;
 mongoose.set('strictQuery', true);
 mongoose.set('debug', true);
 mongoose.connect(connectionString, {

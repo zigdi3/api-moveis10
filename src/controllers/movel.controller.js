@@ -2,6 +2,9 @@ import Movel from "../models/movelModel.js";
 
 class MovelController {
     static listarMovel = async (req, res, next) => {
+        // #swagger.tag = ['User']
+        // #swagger.description = 'Lista os moveis do sistema'
+
         try {
             let movel = await Movel.find();
             res.status(200).send(movel)
@@ -11,6 +14,9 @@ class MovelController {
     }
 
     static ListarMovelPorId = async (req, res, next) => {
+        // #swagger.tag = ['User']
+        // #swagger.description = 'Lista os moveis do sistema por id'
+
         try {
             const id = req.params.id
             const MovelResultado = await Movel.findById(id)
@@ -25,7 +31,17 @@ class MovelController {
         }
     }
     static CadastrarMovel = async (req, res, next) => {
+        // #swagger.tag = ['User']
+        // #swagger.description = 'Cadastra novo movel no sistema'
 
+        /*
+              #swagger.parameters['obj'] = {
+          in: 'body',
+          description: 'Dados do movel',
+          required: true,
+          schema: { $ref: "#/definitions/CadastrarMovel" }
+          }
+       */
         let movel = new Movel(req.body)
         try {
             const movelResultado = await movel.save()
@@ -36,6 +52,7 @@ class MovelController {
             next(erro)
         }
     }
+
     static AtualizarMovel = async (req, res, next) => {
         try {
             const id = req.params.id
