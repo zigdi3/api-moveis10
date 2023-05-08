@@ -22,6 +22,7 @@ app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");
     //Quais são os métodos que a conexão pode realizar na API
     res.header("Access-Control-Allow-Methods", 'GET,PUT,POST,DELETE');
+    res.header('access-control-allow-headers', '*');
     app.use(cors());
     next();
 });
