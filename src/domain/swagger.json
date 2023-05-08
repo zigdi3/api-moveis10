@@ -12,7 +12,11 @@
   "servers": [
     {
       "url": "http://localhost:3000",
-      "description": "Server"
+      "description": "LOCAL Server"
+    },
+    {
+      "url": "http://apimoveis10-diegozigoto.b4a.run",
+      "description": "PROD Server"
     }
   ],
   "paths": {

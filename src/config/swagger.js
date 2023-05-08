@@ -12,8 +12,13 @@ const doc = {
   },
   "servers": [
     {
-      "url": process.env.NODE_ENV === "DEV" ? "http://localhost:3000" : "apimoveis10-diegozigoto.b4a.run",
-      "description": "Server"
+      "url": "http://localhost:3000",
+      "description": "LOCAL Server"
+    },
+    {
+
+      "url": "http://apimoveis10-diegozigoto.b4a.run",
+      "description": "PROD Server"
     }
   ],
   definitions: {
