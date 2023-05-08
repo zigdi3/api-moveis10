@@ -1,21 +1,19 @@
 {
-  "swagger": "2.0",
+  "openapi": "3.0.0",
   "info": {
-    "version": "0.8.3",
     "title": "API moveis",
-    "description": "API de moveis."
+    "description": "API de moveis.",
+    "schemes": [
+      "http",
+      "https"
+    ],
+    "version": "1.0.0"
   },
-  "host": "localhost:3000",
-  "basePath": "/",
-  "schemes": [
-    "http",
-    "https"
-  ],
-  "consumes": [
-    "application/json"
-  ],
-  "produces": [
-    "application/json"
+  "servers": [
+    {
+      "url": "http://localhost:3000",
+      "description": "Server"
+    }
   ],
   "paths": {
     "/moveis": {
@@ -37,7 +35,7 @@
             "description": "Dados do movel",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/CadastrarMovel"
+              "$ref": "#/components/schemas/CadastrarMovel"
             }
           }
         ],
@@ -56,7 +54,9 @@
             "name": "id",
             "in": "path",
             "required": true,
-            "type": "string"
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -75,7 +75,9 @@
             "name": "id",
             "in": "path",
             "required": true,
-            "type": "string"
+            "schema": {
+              "type": "string"
+            }
           },
           {
             "name": "",
@@ -83,7 +85,7 @@
             "description": "Dados do movel",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/CadastrarMovel"
+              "$ref": "#/components/schemas/CadastrarMovel"
             }
           }
         ],
@@ -103,40 +105,44 @@
             "name": "id",
             "in": "path",
             "required": true,
-            "type": "string"
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {}
       }
     }
   },
-  "definitions": {
-    "CadastrarMovel": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "number",
-          "example": 2328742312
-        },
-        "categoria": {
-          "type": "string",
-          "example": "Casa"
-        },
-        "tipo": {
-          "type": "string",
-          "example": "Madeira"
-        },
-        "preco": {
-          "type": "number",
-          "example": 135
-        },
-        "descricao": {
-          "type": "string",
-          "example": "Armario 3 portas"
-        },
-        "fabricante": {
-          "type": "string",
-          "example": "Tony Tornado"
+  "components": {
+    "schemas": {
+      "CadastrarMovel": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number",
+            "example": 2328742312
+          },
+          "categoria": {
+            "type": "string",
+            "example": "Casa"
+          },
+          "tipo": {
+            "type": "string",
+            "example": "Madeira"
+          },
+          "preco": {
+            "type": "number",
+            "example": 135
+          },
+          "descricao": {
+            "type": "string",
+            "example": "Armario 3 portas"
+          },
+          "fabricante": {
+            "type": "string",
+            "example": "Tony Tornado"
+          }
         }
       }
     }
