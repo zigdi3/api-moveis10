@@ -6,7 +6,7 @@ const doc = {
     title: "API moveis",
     description: "API de moveis."
   },
-  host: "https://apimoveis10-diegozigoto.b4a.run/",
+  host: "apimoveis10-diegozigoto.b4a.run",
   basePath: "/",
   schemes: ['http', 'https'],
   consumes: ['application/json'],
