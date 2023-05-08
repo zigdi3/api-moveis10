@@ -9,7 +9,7 @@ const doc = {
     title: "API moveis",
     description: "API de moveis."
   },
-  host: process.env.NODE_ENV === 'dev' ? "localhost:3000" : "apimoveis10-diegozigoto.b4a.run",
+  host: process.env.NODE_ENV !== 'PROD' ? "localhost:3000" : "apimoveis10-diegozigoto.b4a.run",
   basePath: "/",
   schemes: ['http', 'https'],
   consumes: ['application/json'],
