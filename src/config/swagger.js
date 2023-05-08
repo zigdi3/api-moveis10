@@ -9,7 +9,7 @@ const doc = {
     title: "API moveis",
     description: "API de moveis."
   },
-  host: process.env.NODE_ENV !== 'PROD' ? "localhost:3000" : "apimoveis10-diegozigoto.b4a.run",
+  host: process.env.NODE_ENV === "DEV" ? "localhost:3000" : "apimoveis10-diegozigoto.b4a.run",
   basePath: "/",
   schemes: ['http', 'https'],
   consumes: ['application/json'],
@@ -33,7 +33,7 @@ const options = {
   openapi: false,          // Enable/Disable OpenAPI. By default is null
   language: 'en-US',         // Change response language. By default is 'en-US'
   disableLogs: false,     // Enable/Disable logs. By default is false
-  autoHeaders: true,     // Enable/Disable automatic headers capture. By default is true
+  autoHeaders: false,     // Enable/Disable automatic headers capture. By default is true
   autoQuery: true,       // Enable/Disable automatic query capture. By default is true
   autoBody: true         // Enable/Disable automatic body capture. By default is true
 }
