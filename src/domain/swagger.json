@@ -5,7 +5,7 @@
     "title": "API moveis",
     "description": "API de moveis."
   },
-  "host": "apimoveis10-diegozigoto.b4a.run",
+  "host": "localhost:3000",
   "basePath": "/",
   "schemes": [
     "http",
