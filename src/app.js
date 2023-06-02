@@ -4,7 +4,7 @@ import routes from "./routes/index.js";
 import manipulador404 from "./middlewares/manipulador404.js";
 import manipuladorErros from "./middlewares/manipuladorErros.js";
 import cors from 'cors';
-import swaggerUi from 'swagger-ui-express';
+import { serve, serveFiles, setup } from 'swagger-ui-express'
 import swaggerFile from './domain/swagger.json' assert { type: "json" };
 
 db.on('error', () => {
@@ -16,6 +16,7 @@ db.once('open', () => {
 
 const app = express();
 app.use(express.json());
+app.use(express.urlencoded());
 
 app.use((req, res, next) => {
     //Qual site tem permissão de realizar a conexão, no exemplo abaixo está o "*" indicando que qualquer site pode fazer a conexão
@@ -27,10 +28,22 @@ app.use((req, res, next) => {
     next();
 });
 
+const opt = {
+    swaggerOptions: {
+        explorer: true
+        //headers: Access-Control-Allow-Origin, Access-Control-Allow-Credentials, Access-Control-Allow-Headers
+    }
+}
 /* Middlewares */
+export const noCache = (req, res, next) => {
+    res.set('cache-control', 'no-store, no-cache, must-revalidate, proxy-revalidate')
+    res.set('pragma', 'no-cache')
+    res.set('expires', '0')
+    res.set('surrogate-control', 'no-store')
+    next()
+}
 //app.use(routes)
-app.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerFile))
-
+app.use('/doc', serve, setup(swaggerFile, true));
 routes(app)
 
 app.use(manipulador404)
